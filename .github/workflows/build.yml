@@ -21,7 +21,7 @@ jobs:
 
       - name: Unzip
         run: |
-          z=$(find . -maxdepth 2 -iname "*Gemini*.zip" | head -n1)
+          z=$(find . -maxdepth 4 -iname "*Gemini*.zip" | head -n1)
           if [ -z "$z" ]; then echo "ZIP not found in repo"; ls -la; exit 1; fi
           echo "Using $z"
           unzip -o "$z" -d project
